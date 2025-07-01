@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage Content – News Management</title>
+  <link rel="stylesheet" href="ManageContent-NewsManagement.css">
+  <script src="ManageContent-NewsManagement.js" defer></script>
+</head>
+<body>
+
+  <!-- ── LEFT SIDEBAR ── -->
+  <div class="side-nav">
+    <button class="side-nav__btn" aria-label="Menu">
+      <!-- hamburger icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6"  x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <img src="Images/stiLogo.png" alt="STI Logo" class="side-nav__logo">
+
+    <button class="side-nav__btn" aria-label="Profile">
+      <!-- profile icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ── PAGE CONTENT (pushed right of sidebar) ── -->
+  <div class="content-wrapper">
+    <div class="inner">
+
+      <!-- ── TOP “PILL” NAVBAR ── -->
+      <nav class="pill-nav">
+        <ul class="pill-nav__links">
+          <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Home <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="HomeNews.html">Club News</a></li>
+          <li><a href="HomeEventClub.html">Club Events</a></li>
+        </ul>
+      </li>
+          <li class="pill-nav__item"><a href="ManageContent-NewsManagement.html">Manage Content</a></li>
+          <li class="pill-nav__item"><a href="ClubDirectory.html">Club Directory</a></li>
+          <li class="pill-nav__item"><a href="Request.html">Requests</a></li>
+           <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Account <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="">Profile</a></li>
+          <li><a href="">Settings</a></li>
+          <li><a href="index.html" class="logout-link">Logout</a></li>
+        </ul>
+      </li>
+        </ul>
+        <div class="pill-nav__icons">
+          <button class="pill-nav__icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="pill-nav__icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+        </div>
+      </nav>
+
+      <!-- ── TOGGLE TABS ── -->
+      <div class="toggle-tabs">
+        <button class="toggle-btn active">News Management</button>
+        <a href="ManageContent-EventsManagement.html"><button class="toggle-btn">Events Management</button></a>
+      </div>
+
+      <!-- ── NEWS MANAGEMENT SECTION ── -->
+      <section class="news-management-section">
+        <h2 class="section-title">News Management</h2>
+
+        <div class="filter-create-row">
+          <div class="filters">
+            <label>
+              Status:
+              <select id="status-select">
+                <option>All</option>
+                <option>Published</option>
+                <option>Draft</option>
+              </select>
+            </label>
+            <label>
+              Club:
+              <select id="club-select">
+                <option>All Clubs</option>
+                <option>STEM Club</option>
+                <option>HUMMS Club</option>
+                <option>ITMAWVE Club</option>
+              </select>
+            </label>
+            <label class="date-filter">
+              Date:
+              <div class="date-wrapper">
+                <input type="text" id="date-input" placeholder="mm/dd/yyyy">
+                <span class="calendar-icon">📅</span>
+              </div>
+            </label>
+            <a href="#" class="reset-filters">Reset Filters</a>
+          </div>
+          <button class="create-news-btn">Create News</button>
+        </div>
+
+        <div class="news-table-container">
+          <table class="news-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Club</th>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="title-cell">
+                    <div class="thumb-placeholder"></div>
+                    <span class="news-title">
+                      STI Global City’s STEM Club Celebrates Robotics Success
+                    </span>
+                  </div>
+                </td>
+                <td>STEM Club</td>
+                <td>Joy Barrientos</td>
+                <td>
+                  March 12, 2025<br>
+                  <span class="created-time">Created: 1:43 PM</span>
+                </td>
+                <td><span class="status-badge status-published">Published</span></td>
+                <td>
+                  <a href="#" class="action-btn action-edit">Edit</a>
+                  <a href="#" class="action-btn action-delete">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="title-cell">
+                    <div class="thumb-placeholder"></div>
+                    <span class="news-title">
+                      Arriba Humanista Club Celebrates Successful 2nd General Assembly
+                    </span>
+                  </div>
+                </td>
+                <td>HUMMS Club</td>
+                <td>Zer Parales</td>
+                <td>
+                  February 12, 2025<br>
+                  <span class="created-time">Created: 1:43 PM</span>
+                </td>
+                <td><span class="status-badge status-published">Published</span></td>
+                <td>
+                  <a href="#" class="action-btn action-edit">Edit</a>
+                  <a href="#" class="action-btn action-delete">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="title-cell">
+                    <div class="thumb-placeholder"></div>
+                    <span class="news-title">
+                      ITMAWVE Cyber Seminar Highlights at STI College Global City
+                    </span>
+                  </div>
+                </td>
+                <td>ITMAWVE Club</td>
+                <td>Teany Boregas</td>
+                <td>
+                  January 29, 2025<br>
+                  <span class="created-time">Created: 1:43 PM</span>
+                </td>
+                <td><span class="status-badge status-draft">Draft</span></td>
+                <td>
+                  <a href="#" class="action-btn action-edit">Edit</a>
+                  <a href="#" class="action-btn action-delete">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+<!-- ── CREATE NEWS MODAL ── -->
+<div class="modal-overlay" id="createNewsModal">
+  <div class="modal-box modal-large">
+    <!-- close “X” -->
+    <button class="close-btn" aria-label="Close">&times;</button>
+
+    <h2 class="modal-title">Add New News</h2>
+
+    <form id="createNewsForm" class="modal-form">
+      <div class="form-grid">
+        <!-- Title -->
+        <div class="form-group full">
+          <label for="news-title">Title *</label>
+          <input id="news-title" type="text" placeholder="Enter news title" required>
+        </div>
+
+        <!-- Club -->
+        <div class="form-group">
+          <label for="news-club">Club *</label>
+          <select id="news-club" required>
+            <option value="" disabled selected>Select club…</option>
+            <option>STEM Club</option>
+            <option>HUMMS Club</option>
+            <option>ITMAWVE Club</option>
+          </select>
+        </div>
+
+        <!-- Status -->
+        <div class="form-group">
+          <label for="news-status">Status *</label>
+          <select id="news-status" required>
+            <option value="" disabled selected>Select status…</option>
+            <option>Published</option>
+            <option>Draft</option>
+          </select>
+        </div>
+
+        <!-- Author -->
+        <div class="form-group full">
+          <label for="news-author">Author *</label>
+          <input id="news-author" type="text" placeholder="" required>
+        </div>
+
+        <!-- Featured Image -->
+        <div class="form-group full file-upload">
+          <label for="news-image">Featured Image *</label>
+          <div class="file-input-placeholder">
+            <span>Upload<br>Image</span>
+          </div>
+          <p class="file-hint">
+            Recommended size: 800x400px.<br>
+            Max file size: 2MB.<br>
+            Supported formats: JPG, PNG, GIF
+          </p>
+        </div>
+
+        <!-- Content -->
+        <div class="form-group full">
+          <label for="news-content">Content *</label>
+          <textarea id="news-content" rows="6" placeholder="Write your news content here…" required></textarea>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary close-btn">Cancel</button>
+        <button type="submit" class="btn-primary">Save News</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <!-- ── CONFIRM DELETION MODAL ── -->
+<div class="modal-overlay" id="confirmDeleteModal">
+  <div class="modal-box confirm-delete">
+    <button class="close-btn" aria-label="Close">&times;</button>
+    <h3>Confirm Deletion</h3>
+    <p>Are you sure you want to delete this news item? This action cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn-secondary" data-action="cancel">Cancel</button>
+      <button class="btn-danger"    data-action="confirm">Yes, Delete</button>
+    </div>
+  </div>
+</div>
+
+    </div><!-- /.inner -->
+  </div><!-- /.content-wrapper -->
+
+<!-- LOGOUT CONFIRM MODAL -->
+<div id="logoutConfirmOverlay">
+  <div class="modal-box">
+    <h4>Do you want to logout?</h4>
+    <div class="btns">
+      <button class="btn-no">No</button>
+      <button class="btn-yes">Yes</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

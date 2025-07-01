@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Request.css">
+    <script src="Request.js" defer></script>
+</head>
+<body>
+        <!-- ── LEFT SIDEBAR ── -->
+  <div class="side-nav">
+    <!-- Hamburger menu -->
+    <button class="side-nav__btn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6"  x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- STI Logo -->
+    <img src="Images/stiLogo.png" alt="STI Logo" class="side-nav__logo">
+
+    <!-- Profile button -->
+    <button class="side-nav__btn" aria-label="Profile">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+      </svg>
+    </button>
+   
+    
+
+  </div>
+
+  <!-- ── PAGE CONTENT (pushed right) ── -->
+  <div class="content-wrapper">
+
+    <!-- ── TOP “PILL” NAVBAR ── -->
+    <nav class="pill-nav">
+      <ul class="pill-nav__links">
+        <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Home <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="HomeNews.html">Club News</a></li>
+          <li><a href="HomeEventClub.html">Club Events</a></li>
+        </ul>
+      </li>
+        <li class="pill-nav__item"><a href="ManageContent-NewsManagement.html">Manage Content</a></li>
+        <li class="pill-nav__item"><a href="ClubDirectory.html">Club Directory</a></li>
+        <li class="pill-nav__item"><a href="#">Requests</a></li>
+        <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Account <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="">Profile</a></li>
+          <li><a href="">Settings</a></li>
+          <li><a href="index.html" class="logout-link">Logout</a></li>
+        </ul>
+      </li>
+      </ul>
+      <div class="pill-nav__icons">
+        <button class="pill-nav__icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="pill-nav__icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <section class="applications-section">
+  <h2 class="section-title">Club Applications</h2>
+
+  <div class="search-row">
+    <input type="text" placeholder="Search name…">
+    <button class="search-btn" aria-label="Search">🔍</button>
+  </div>
+
+  <div class="app-tabs">
+    <button class="app-tab active">All Applications (5)</button>
+    <button class="app-tab">Pending (2)</button>
+    <button class="app-tab">Approved (2)</button>
+    <button class="app-tab">Rejected (1)</button>
+  </div>
+
+  <div class="applications-table-container">
+    <table class="applications-table">
+      <thead>
+        <tr>
+          <th>STUDENT</th>
+          <th>STUDENT NUMBER</th>
+          <th>CLUB</th>
+          <th>STRAND</th>
+          <th>DATE APPLIED</th>
+          <th>STATUS</th>
+          <th>ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sofia Santos</td>
+          <td>2000282026</td>
+          <td>STEM Club</td>
+          <td>STEM</td>
+          <td>January 21, 2025</td>
+          <td><span class="status-pending">Pending</span></td>
+          <td>
+            <button class="action-approve">Approved</button>
+            <button class="action-reject">Rejected</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Miguel Reyes</td>
+          <td>2000282036</td>
+          <td>HUMMS Club</td>
+          <td>HUMSS</td>
+          <td>January 20, 2025</td>
+          <td><span class="status-pending">Pending</span></td>
+          <td>
+            <button class="action-approve">Approved</button>
+            <button class="action-reject">Rejected</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Lia Malinao</td>
+          <td>2000212036</td>
+          <td>Cooks Club</td>
+          <td>GAS</td>
+          <td>January 19, 2025</td>
+          <td><span class="status-rejected">Rejected</span></td>
+          <td>
+            <button class="action-approve">Approved</button>
+          </td>
+        </tr>
+        <tr>
+          <td>David Garcia</td>
+          <td>2000210036</td>
+          <td>ABM Club</td>
+          <td>ABM</td>
+          <td>January 18, 2025</td>
+          <td><span class="status-approved">Approved</span></td>
+          <td>
+            <button class="action-revoke">Revoke</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Jake Basea</td>
+          <td>2000910036</td>
+          <td>ITMAWVE Club</td>
+          <td>ICT</td>
+          <td>January 17, 2025</td>
+          <td><span class="status-approved">Approved</span></td>
+          <td>
+            <button class="action-revoke">Revoke</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+  </div>
+
+<!-- LOGOUT CONFIRM MODAL -->
+<div id="logoutConfirmOverlay">
+  <div class="modal-box">
+    <h4>Do you want to logout?</h4>
+    <div class="btns">
+      <button class="btn-no">No</button>
+      <button class="btn-yes">Yes</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,812 @@
+/* ── RESET & BASE ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── LEFT SIDEBAR ── */
+.side-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  background: #00008B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 2rem;
+  z-index: 1000;
+}
+.side-nav__btn {
+  width: 48px;
+  height: 48px;
+  background: #FF0;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.side-nav__btn:hover {
+  transform: scale(1.05);
+}
+.side-nav__logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #FF0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ── PUSH CONTENT RIGHT OF SIDEBAR ── */
+.content-wrapper {
+  margin-left: 80px;   /* same width as .side-nav */
+  padding: 1rem;
+}
+
+/* ── PILL NAVBAR ── */
+.pill-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.pill-nav__links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+  flex: 1;           /* pushes icons to the right */
+}
+.pill-nav__item a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.pill-nav__arrow {
+  font-size: 0.7rem;
+  line-height: 1;
+}
+.pill-nav__icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.pill-nav__icon-btn {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.pill-nav__icon-btn:hover {
+  opacity: 0.7;
+}
+/* ── EVENLY DISTRIBUTE THE LINKS ── */
+.pill-nav__links {
+  /* make the links container fill all the room between logo & icons */
+  flex: 1;
+
+  /* turn off any fixed gap… */
+  gap: 0;
+
+  /* …and spread its items evenly */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.toggle-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  border-radius: 12px;
+  background: #f4f4f4;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.toggle-btn.active {
+  background: #ff0;
+  color: #000;
+  font-weight: 600;
+}
+
+/* ── Latest Clubs News ── */
+.news-section {
+  padding: 1rem 0;
+}
+
+.news-section__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ── EVENTS MANAGEMENT SECTION ── */
+.events-management-section {
+  margin-bottom: 2rem;
+}
+.events-management-section .section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* filter + create row */
+.filter-create-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.filter-create-row .filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+.filter-create-row .filters label {
+  font-weight: 500;
+}
+.filter-create-row .filters select,
+.filter-create-row .filters input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+.filter-create-row .date-filter .date-wrapper {
+  position: relative;
+  min-width: 180px;
+}
+.filter-create-row .date-wrapper input {
+  width: 100%;
+  padding-right: 2em;
+}
+.filter-create-row .date-wrapper .calendar-icon {
+  position: absolute;
+  top: 50%; right: 8px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1rem;
+}
+.filter-create-row .reset-filters {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.filter-create-row .reset-filters:hover {
+  text-decoration: underline;
+}
+.create-event-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.create-event-btn:hover {
+  background: #0069d9;
+}
+
+/* ── EVENTS TABLE ── */
+.events-table-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.events-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.events-table thead th {
+  background: #f0f0f0;
+  text-align: left;
+  padding: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.events-table thead th:nth-child(1) { width: 25%; }
+.events-table thead th:nth-child(2) { width: 20%; }
+.events-table thead th:nth-child(3) { width: 20%; }
+.events-table thead th:nth-child(4) { width: 15%; }
+.events-table thead th:nth-child(5) { width: 10%; }
+.events-table thead th:nth-child(6) { width: 10%; }
+
+.events-table tbody td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+}
+.events-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* thumbnail + title */
+.title-cell {
+  display: flex;
+  align-items: center;
+}
+.thumb-placeholder {
+  width: 60px;
+  height: 40px;
+  background: #1e90ff;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+}
+.event-name {
+  font-weight: 500;
+}
+
+/* date & time */
+.event-time {
+  display: block;
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.25rem;
+  line-height: 1.3;
+}
+
+/* status badges */
+.status-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 0.2em 0.6em;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.status-past {
+  background: #e0e0e0;
+  color: #555;
+}
+.status-ongoing {
+  background: #ffe0f0;
+  color: #c71585;
+}
+.status-draft {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* actions */
+.actions-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.actions-cell .action-edit,
+.actions-cell .action-delete,
+.actions-cell .action-more {
+  font-size: 0.85rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.actions-cell .action-edit {
+  background: #e7f3ff;
+  color: #007bff;
+}
+.actions-cell .action-delete {
+  background: #ffe7e7;
+  color: #dc3545;
+}
+.actions-cell .action-more {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.section-title{
+    padding-top: 10px;
+}
+
+
+/* ── Stretch Date filter in Events Management ── */
+.filter-create-row .filters .date-filter {
+  display: flex;
+  align-items: center;
+  min-width: 220px;      /* match your desired width */
+  margin-right: 1rem;    /* keep gap before “Reset Filters” */
+}
+.filter-create-row .filters .date-filter label {
+  flex: 0 0 auto;        /* label “Date:” stays its natural size */
+  margin-right: 0.5rem;
+}
+.filter-create-row .filters .date-filter .date-wrapper {
+  flex: 1 1 auto;        /* allow the wrapper to grow */
+}
+.filter-create-row .filters .date-filter input {
+  width: 100%;           /* fill that wrapper */
+  box-sizing: border-box;
+}
+
+/* ── Modal overlay & box ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal-box {
+  background: #fff;
+  border: 3px solid #6c1fcc;  /* purple outline */
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  position: relative;
+  font-family: inherit;
+}
+
+/* Close “×” */
+.modal-box .close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Headline */
+.modal-box h3 {
+  margin-top: 0; 
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Form fields */
+.modal-box label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+.modal-box input[type="text"],
+.modal-box input[type="number"],
+.modal-box select,
+.modal-box textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
+  box-sizing: border-box;
+  margin-top: 0.25rem;
+}
+
+/* 2-column rows */
+.modal-box .two-col {
+  display: flex;
+  gap: 1rem;
+}
+.modal-box .two-col label {
+  flex: 1;
+}
+
+/* 3-column row */
+.modal-box .three-col {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.modal-box .three-col label {
+  flex: 1;
+}
+
+/* Date & time wrappers */
+.date-wrapper,
+.time-wrapper {
+  position: relative;
+}
+.date-wrapper input,
+.time-wrapper input {
+  padding-right: 2em;
+}
+.calendar-icon,
+.clock-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* File upload placeholder */
+.file-upload {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.file-upload .thumb-placeholder {
+  width: 100px;
+  height: 80px;
+  background: #eee;
+  border-radius: 4px;
+  flex-shrink:0;
+}
+.upload-hint {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: #666;
+}
+
+/* Modal buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.btn-primary {
+  background: #032da8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+}
+.btn-secondary {
+  background: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+}
+
+/* ── DELETE CONFIRMATION POPUP ── */
+.delete-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(2px);
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
+}
+.delete-modal-overlay.active {
+  display: flex;
+}
+
+.delete-modal-box {
+  background: #fff;
+  border: 2px solid #8000FF;     /* same purple accent */
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: relative;
+  font-family: inherit;
+}
+
+.delete-modal-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+}
+
+.delete-modal-box p {
+  margin-bottom: 1.5rem;
+  color: #444;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.delete-modal-box .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.delete-modal-box .btn-cancel {
+  background: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.delete-modal-box .btn-cancel:hover {
+  background: #b3b3b3;
+}
+
+.delete-modal-box .btn-delete {
+  background: #d80000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.delete-modal-box .btn-delete:hover {
+  background: #a60000;
+}
+
+.delete-modal-box .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #555;
+}
+
+
+/* ── PARTICIPANTS MODAL ── */
+.participants-modal-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
+  z-index: 4000;
+}
+.participants-modal-overlay.active {
+  display: flex;
+}
+.participants-modal-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  max-width: 700px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.participants-modal-box .close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  background: none; border: none;
+  font-size: 1.5rem; cursor: pointer; color: #333;
+}
+.participants-modal-box .modal-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.participants-modal-box .modal-subtitle {
+  margin: 0 0 1rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+.participants-modal-box .modal-count {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+.participants-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+.participants-table th,
+.participants-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 0.925rem;
+}
+.participants-table thead th {
+  background: #f0f0f0;
+  font-weight: 600;
+}
+.participants-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── DROPDOWN UNDER “Home and settings” (fixed) ── */
+.pill-nav .dropdown {
+  position: relative;
+}
+
+.pill-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;        /* sit flush below the pill */
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-width: 160px;
+  z-index: 500;
+  /* margin-top removed! */
+}
+
+.pill-nav .dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.95rem;
+}
+.pill-nav .dropdown-menu li a:hover {
+  background: #f4f4f4;
+}
+
+/* show on hover of either toggle or the menu itself */
+.pill-nav .dropdown:hover .dropdown-menu,
+.pill-nav .dropdown .dropdown-menu:hover {
+  display: block;
+}
+
+/* optional arrow flip */
+.pill-nav .dropdown:hover .pill-nav__arrow {
+  transform: rotate(180deg);
+  transition: transform 0.2s;
+}
+
+
+/* ── LOGOUT CONFIRM MODAL ── */
+#logoutConfirmOverlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+#logoutConfirmOverlay.active {
+  display: flex;
+}
+#logoutConfirmOverlay .modal-box {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+}
+#logoutConfirmOverlay .modal-box h4 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+#logoutConfirmOverlay .modal-box .btns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+#logoutConfirmOverlay .modal-box button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+#logoutConfirmOverlay .modal-box .btn-no {
+  background: #ccc;
+  color: #333;
+}
+#logoutConfirmOverlay .modal-box .btn-yes {
+  background: #d9534f;
+  color: #fff;
+}
+
+/* ── TWEAKED LOGOUT CONFIRM STYLING ── */
+#logoutConfirmOverlay .modal-box {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  transform: translateY(-10px);
+  transition: transform 0.2s ease;
+}
+#logoutConfirmOverlay.active .modal-box {
+  transform: translateY(0);
+}
+
+#logoutConfirmOverlay .modal-box h4 {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+}
+
+#logoutConfirmOverlay .modal-box .btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+#logoutConfirmOverlay .modal-box .btn-no,
+#logoutConfirmOverlay .modal-box .btn-yes {
+  min-width: 80px;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+#logoutConfirmOverlay .modal-box .btn-no {
+  background: #e0e0e0;
+  color: #333;
+}
+#logoutConfirmOverlay .modal-box .btn-no:hover {
+  background: #d1d1d1;
+  transform: translateY(-1px);
+}
+
+#logoutConfirmOverlay .modal-box .btn-yes {
+  background: #d9534f;
+  color: #fff;
+}
+#logoutConfirmOverlay .modal-box .btn-yes:hover {
+  background: #c9302c;
+  transform: translateY(-1px);
+}
+
+/* slightly darken the overlay */
+#logoutConfirmOverlay {
+  background: rgba(0,0,0,0.45);
+}

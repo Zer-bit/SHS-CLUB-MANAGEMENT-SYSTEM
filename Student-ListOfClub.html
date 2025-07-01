@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Student-ListOfClub.css">
+    <script src="Student-ListOfClub.js" defer></script>
+</head>
+<body>
+    <!-- ── LEFT SIDEBAR ── -->
+  <div class="side-nav">
+    <!-- Hamburger menu -->
+    <button class="side-nav__btn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6"  x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- STI Logo -->
+    <img src="Images/stiLogo.png" alt="STI Logo" class="side-nav__logo">
+
+    <!-- Profile button -->
+    <button class="side-nav__btn" aria-label="Profile">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+      </svg>
+    </button>
+
+    
+
+  </div>
+
+  <!-- ── PAGE CONTENT (pushed right) ── -->
+  <div class="content-wrapper">
+
+    <!-- ── TOP “PILL” NAVBAR ── -->
+    <nav class="pill-nav">
+      <ul class="pill-nav__links">
+      <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Home <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="Student-HomeNews.html">Club News</a></li>
+          <li><a href="Student-HomeEventClub.html">Club Events</a></li>
+        </ul>
+      </li>
+        <li class="pill-nav__item"><a href="">List of Clubs</a></li>
+        <li class="pill-nav__item"><a href="">Discover your Club</a></li>
+        <li class="pill-nav__item"><a href="">About</a></li>
+        <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Account <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="">Profile</a></li>
+          <li><a href="">Settings</a></li>
+          <li><a href="index.html" class="logout-link">Logout</a></li>
+        </ul>
+      </li>
+      </ul>
+      <div class="pill-nav__icons">
+        <button class="pill-nav__icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="pill-nav__icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ── HERO BANNER ── -->
+    <section class="hero-banner">
+      <div class="hero-image-placeholder"></div>
+      <div class="hero-text">
+        <h1>Explore Our Clubs</h1>
+        <p>STI Senior High School offers a wide range of clubs and organizations to enrich your educational experience and develop your skills outside the classroom.</p>
+      </div>
+    </section>
+
+    <!-- ── CLUBS GRID ── -->
+    <section class="clubs-grid">
+      <!-- Card #1 -->
+            <article class="club-card">
+        <div class="card-header">
+            <span class="badge">Arts &amp; Culture</span>
+            <span class="members-count">👥 5</span>
+        </div>
+
+        <div class="club-title">
+            <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=Logo" 
+                alt="Club Logo" class="club-logo">
+            <h2>Artes Global Music</h2>
+        </div>
+
+        <p>Perform and collaborate with fellow musicians while exploring different music genres.</p>
+        <button class="btn-details">ℹ️ View Club Details</button>
+        </article>
+
+      <!-- Card #2 -->
+<article class="club-card">
+  <div class="card-header">
+    <span class="badge">Arts &amp; Culture</span>
+    <span class="members-count">👥 21</span>
+  </div>
+
+  <div class="club-title">
+    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=🎭"
+         alt="Dance & Drama Logo" class="club-logo">
+    <h2>Artes Global Dance & Drama</h2>
+  </div>
+
+  <p>Express creativity through dance and acting while developing performance skills.</p>
+  <button class="btn-details">ℹ️ View Club Details</button>
+</article>
+
+<!-- Card #3 -->
+<article class="club-card">
+  <div class="card-header">
+    <span class="badge">Academic</span>
+    <span class="members-count">👥 49</span>
+  </div>
+
+  <div class="club-title">
+    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=📊"
+         alt="ABM Club Logo" class="club-logo">
+    <h2>ABM Club</h2>
+  </div>
+
+  <p>Develop business and marketing skills while understanding real-world financial strategies.</p>
+  <button class="btn-details">ℹ️ View Club Details</button>
+</article>
+
+<!-- Card #4 -->
+<article class="club-card">
+  <div class="card-header">
+    <span class="badge">Special Interest</span>
+    <span class="members-count">👥 40</span>
+  </div>
+
+  <div class="club-title">
+    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=🍴"
+         alt="Cooks Club Logo" class="club-logo">
+    <h2>Cooks Club</h2>
+  </div>
+
+  <p>Learn and enhance your culinary skills through hands-on cooking experiences.</p>
+  <button class="btn-details">ℹ️ View Club Details</button>
+</article>
+
+<!-- Card #5 -->
+<article class="club-card">
+  <div class="card-header">
+    <span class="badge">Arts & Culture</span>
+    <span class="members-count">👥 11</span>
+  </div>
+
+  <div class="club-title">
+    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=🍴"
+         alt="Arts Club Logo" class="club-logo">
+    <h2>Digital &amp; Multimedia Arts Club</h2>
+  </div>
+
+  <p>Create digital artwork, animations, and multimedia projects.</p>
+  <button class="btn-details">ℹ️ View Club Details</button>
+</article>
+
+<!-- Card #6 -->
+<article class="club-card">
+  <div class="card-header">
+    <span class="badge">Community Service</span>
+    <span class="members-count">👥 11</span>
+  </div>
+
+  <div class="club-title">
+    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=🍴"
+         alt="Arts Club Logo" class="club-logo">
+    <h2>Student Engangement Service League</h2>
+  </div>
+
+  <p>Organize community service projects and vulonteer activities.</p>
+  <button class="btn-details">ℹ️ View Club Details</button>
+</article>
+
+<!-- Card #7 -->
+<article class="club-card">
+  <div class="card-header">
+    <span class="badge">Academic</span>
+    <span class="members-count">👥 43</span>
+  </div>
+
+  <div class="club-title">
+    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=🍴"
+         alt="Arts Club Logo" class="club-logo">
+    <h2>HUMMS Club</h2>
+  </div>
+
+  <p>Explore the humanities, social sciences, and related fields.</p>
+  <button class="btn-details">ℹ️ View Club Details</button>
+</article>
+
+<!-- Card #8 -->
+<article class="club-card">
+  <div class="card-header">
+    <span class="badge">Academic</span>
+    <span class="members-count">👥 41</span>
+  </div>
+
+  <div class="club-title">
+    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=🍴"
+         alt="Arts Club Logo" class="club-logo">
+    <h2>ITMAWE Club</h2>
+  </div>
+
+  <p>Learn about IT, multimedia, and web development technologies.</p>
+  <button class="btn-details">ℹ️ View Club Details</button>
+</article>
+
+<!-- Card #9 -->
+<article class="club-card">
+  <div class="card-header">
+    <span class="badge">Academic</span>
+    <span class="members-count">👥 31</span>
+  </div>
+
+  <div class="club-title">
+    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=🍴"
+         alt="Arts Club Logo" class="club-logo">
+    <h2>STEM Club</h2>
+  </div>
+
+  <p>Engange in science, technology, engineering, and mathematics activities.</p>
+  <button class="btn-details">ℹ️ View Club Details</button>
+</article>
+
+<!-- Card #10 -->
+<article class="club-card">
+  <div class="card-header">
+    <span class="badge">Sports & Recreation</span>
+    <span class="members-count">👥 31</span>
+  </div>
+
+  <div class="club-title">
+    <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=🍴"
+         alt="Arts Club Logo" class="club-logo">
+    <h2>Sport Club</h2>
+  </div>
+
+  <p>Participate in various sports and athletic activities.</p>
+  <button class="btn-details">ℹ️ View Club Details</button>
+</article>
+
+    </section>
+
+  </div>
+<!-- LOGOUT CONFIRM MODAL -->
+<div id="logoutConfirmOverlay">
+  <div class="modal-box">
+    <h4>Do you want to logout?</h4>
+    <div class="btns">
+      <button class="btn-no">No</button>
+      <button class="btn-yes">Yes</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

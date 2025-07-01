@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ManageContent-EventsManagement.css">
+    <script src="ManageContent-EventsManagement.js" defer></script>
+</head>
+<body>
+      <!-- ── LEFT SIDEBAR ── -->
+  <div class="side-nav">
+    <!-- Hamburger menu -->
+    <button class="side-nav__btn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6"  x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- STI Logo -->
+    <img src="Images/stiLogo.png" alt="STI Logo" class="side-nav__logo">
+
+    <!-- Profile button -->
+    <button class="side-nav__btn" aria-label="Profile">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+      </svg>
+    </button>
+   
+    
+
+  </div>
+
+  <!-- ── PAGE CONTENT (pushed right) ── -->
+  <div class="content-wrapper">
+
+    <!-- ── TOP “PILL” NAVBAR ── -->
+    <nav class="pill-nav">
+      <ul class="pill-nav__links">
+        <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Home <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="HomeNews.html">Club News</a></li>
+          <li><a href="HomeEventClub.html">Club Events</a></li>
+        </ul>
+      </li>
+        <li class="pill-nav__item"><a href="ManageContent-NewsManagement.html">Manage Content</a></li>
+        <li class="pill-nav__item"><a href="ClubDirectory.html">Club Directory</a></li>
+        <li class="pill-nav__item"><a href="Request.html">Requests</a></li>
+        <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Account <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="">Profile</a></li>
+          <li><a href="">Settings</a></li>
+          <li><a href="index.html" class="logout-link">Logout</a></li>
+        </ul>
+      </li>
+      </ul>
+      <div class="pill-nav__icons">
+        <button class="pill-nav__icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="pill-nav__icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="toggle-tabs">
+    <a href="ManageContent-NewsManagement.html"><button class="toggle-btn">News Management</button></a>
+    <button class="toggle-btn active">Events Management</button>
+
+           <!-- ── EVENTS MANAGEMENT SECTION ── -->
+    <section class="events-management-section">
+      <h2 class="section-title">Events Management</h2>
+
+      <div class="filter-create-row">
+        <div class="filters">
+          <label>
+            Status:
+            <select>
+              <option>All</option>
+              <option>Upcoming</option>
+              <option>Ongoing</option>
+              <option>Past</option>
+              <option>Draft</option>
+            </select>
+          </label>
+          <label>
+            Club:
+            <select>
+              <option>All Clubs</option>
+              <option>Artist Global Dance & Drama</option>
+              <option>ABM Club</option>
+              <option>Cooks Club</option>
+            </select>
+          </label>
+          <label class="date-filter">
+            Date:
+            <div class="date-wrapper">
+              <input type="text" placeholder="mm/dd/yyyy">
+              <span class="calendar-icon">📅</span>
+            </div>
+          </label>
+          <a href="#" class="reset-filters">Reset Filters</a>
+        </div>
+        <button class="create-event-btn">Create Event</button>
+      </div>
+
+      <div class="events-table-container">
+        <table class="events-table">
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Club</th>
+              <th>Date &amp; Time</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="title-cell">
+                  <div class="thumb-placeholder"></div>
+                  <span class="event-name">Dance Workshop</span>
+                </div>
+              </td>
+              <td>Artist Global Dance &amp; Drama</td>
+              <td>
+                April 10, 2025<br>
+                <span class="event-time">1:00 PM – 2:00 PM<br>Created: April 1, 2025 1:43 PM</span>
+              </td>
+              <td>Gym</td>
+              <td><span class="status-badge status-past">Past</span></td>
+              <td class="actions-cell">
+                <a href="#" class="action-edit">Edit</a>
+                <a href="#" class="action-delete">Delete</a>
+                <a href="#" class="action-more">See Participants</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="title-cell">
+                  <div class="thumb-placeholder"></div>
+                  <span class="event-name">Business Innovation Summit</span>
+                </div>
+              </td>
+              <td>ABM Club</td>
+              <td>
+                April 22, 2025<br>
+                <span class="event-time">8:00 AM – 3:00 PM<br>Created: April 2, 2025 1:43 PM</span>
+              </td>
+              <td>Auditorium</td>
+              <td><span class="status-badge status-ongoing">Ongoing</span></td>
+              <td class="actions-cell">
+                <a href="#" class="action-edit">Edit</a>
+                <a href="#" class="action-delete">Delete</a>
+                <a href="#" class="action-more">See Participants</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="title-cell">
+                  <div class="thumb-placeholder"></div>
+                  <span class="event-name">Culinary Creativity Expo</span>
+                </div>
+              </td>
+              <td>Cooks Club</td>
+              <td>
+                April 29, 2025<br>
+                <span class="event-time">9:00 AM – 4:00 PM<br>Created: April 3, 2025 1:43 PM</span>
+              </td>
+              <td>Room 412</td>
+              <td><span class="status-badge status-draft">Draft</span></td>
+              <td class="actions-cell">
+                <a href="#" class="action-edit">Edit</a>
+                <a href="#" class="action-delete">Delete</a>
+                <a href="#" class="action-more">See Participants</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+     <!-- ── CREATE EVENT MODAL ── -->
+  <div class="modal-overlay" id="createEventModal">
+    <div class="modal-box">
+      <button class="close-btn" aria-label="Close">×</button>
+      <h3>Add New Event</h3>
+      <form id="createEventForm">
+        <label>
+          Event Title *
+          <input type="text" placeholder="Enter event title" required>
+        </label>
+        <div class="two-col">
+          <label>
+            Club *
+            <select required>
+              <option value="">Select club</option>
+              <option>Artist Global Dance & Drama</option>
+              <option>ABM Club</option>
+              <option>Cooks Club</option>
+            </select>
+          </label>
+          <label>
+            Location *
+            <input type="text" placeholder="Enter event location" required>
+          </label>
+        </div>
+        <div class="three-col">
+          <label>
+            Date *
+            <div class="date-wrapper">
+              <input type="text" placeholder="mm/dd/yyyy" required>
+              <span class="calendar-icon">📅</span>
+            </div>
+          </label>
+          <label>
+            Start Time *
+            <div class="time-wrapper">
+              <input type="text" placeholder="HH:MM" required>
+              <span class="clock-icon">⏰</span>
+            </div>
+          </label>
+          <label>
+            End Time *
+            <div class="time-wrapper">
+              <input type="text" placeholder="HH:MM" required>
+              <span class="clock-icon">⏰</span>
+            </div>
+          </label>
+        </div>
+        <label>
+          Status *
+          <select required>
+            <option value="">Select status</option>
+            <option>Upcoming</option>
+            <option>Ongoing</option>
+            <option>Past</option>
+            <option>Draft</option>
+          </select>
+        </label>
+        <label>
+          Event Banner *
+          <div class="file-upload">
+            <div class="thumb-placeholder"></div>
+            <div class="upload-hint">
+              Recommended size: 800×400px.<br>
+              Max file size: 2 MB.<br>
+              Formats: JPG, PNG, GIF
+            </div>
+          </div>
+        </label>
+        <label>
+          Description *
+          <textarea rows="4" placeholder="Write event description here…" required></textarea>
+        </label>
+        <div class="two-col">
+          <label>
+            Registration Deadline *
+            <div class="date-wrapper">
+              <input type="text" placeholder="mm/dd/yyyy" required>
+              <span class="calendar-icon">📅</span>
+            </div>
+          </label>
+          <label>
+            Maximum Participant *
+            <input type="number" placeholder="0" min="1" required>
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary">Save Event</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  </div>
+  <!-- ── Delete modal ── -->
+    <div class="delete-modal-overlay" id="deleteModal">
+  <div class="delete-modal-box">
+    <button class="close-btn" onclick="toggleDeleteModal(false)">×</button>
+    <h3>Confirm Deletion</h3>
+    <p>Are you sure you want to delete this item? This action cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="toggleDeleteModal(false)">Cancel</button>
+      <button class="btn-delete" onclick="confirmDeletion()">Yes, Delete</button>
+    </div>
+  </div>
+</div>
+
+      <!-- ── PARTICIPANTS MODAL ── -->
+  <div class="participants-modal-overlay" id="participantsModal">
+    <div class="participants-modal-box">
+      <button class="close-btn" onclick="toggleParticipantsModal(false)">×</button>
+      <h3 class="modal-title">Participants for: <span id="pm-event-name"></span></h3>
+      <p class="modal-subtitle">View all registered participants for this event</p>
+      <p class="modal-count"><span id="pm-registered"></span> participants registered out of <span id="pm-maximum"></span> maximum</p>
+      <table class="participants-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Registration Date</th>
+          </tr>
+        </thead>
+        <tbody id="pm-body">
+          <!-- rows will be injected here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<!-- LOGOUT CONFIRM MODAL -->
+<div id="logoutConfirmOverlay">
+  <div class="modal-box">
+    <h4>Do you want to logout?</h4>
+    <div class="btns">
+      <button class="btn-no">No</button>
+      <button class="btn-yes">Yes</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

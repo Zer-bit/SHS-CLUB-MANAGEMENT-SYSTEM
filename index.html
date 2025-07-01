@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STI SHS Club Management</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <main>
+      <div class="top-gap"></div>
+      <header class="main-header">
+        <div class="header-content">
+          <img class="stiLogo" src="Images/stiLogo.png" alt="STI Logo">
+          <h1>STI SHS Club Management</h1>
+        </div>
+      </header>
+
+      <div class="login-box">
+        <img class="login-logo" src="Images/stiLogo.png" alt="STI Logo">
+        <button class="login-btn" onclick="showLoginForm()">Login / Signup</button>
+
+        <!-- LOGIN / REGISTER POPUP -->
+        <div class="login-popup" id="loginPopup">
+          <div class="login-popup-content">
+
+            <!-- ROLE TABS -->
+            <div class="popup-tabs">
+              <button class="tab active" data-role="student">Student</button>
+              <button class="tab"        data-role="admin">Admin</button>
+            </div>
+
+            <!-- SUBTABS -->
+            <div class="popup-subtabs">
+              <button class="subtab active" data-view="login">Login</button>
+              <button class="subtab"        data-view="register">Register</button>
+            </div>
+
+            <!-- ALL VIEWS -->
+            <div class="views">
+
+              <!-- STUDENT ROLE -->
+              <div class="role-view student-view active">
+
+                <!-- STUDENT LOGIN -->
+                <div id="student-login" class="view active">
+                  <h2 class="popup-title">LOGIN YOUR ACCOUNT</h2>
+                  <form class="popup-form" onsubmit="return validateStudentLogin()">
+                    <label for="stu-email">STI Email</label>
+                    <input id="stu-email" type="email" placeholder="you@globalcity.sti.edu.ph" required>
+                    <label for="stu-pass">Password</label>
+                    <div class="password-wrapper">
+                      <input id="stu-pass" type="password" placeholder="********" required>
+                      <button type="button" class="toggle-pw" aria-label="Show password">👁</button>
+                    </div>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                    <button type="submit" class="btn-login">LOGIN</button>
+                  </form>
+                </div>
+
+                <!-- STUDENT REGISTER -->
+                <div id="student-register" class="view">
+                  <h2 class="popup-title">CREATE YOUR ACCOUNT</h2>
+                  <form class="popup-form">
+                    <div class="name-row">
+                      <div><label>First Name</label><input type="text" placeholder="First" required></div>
+                      <div><label>Middle Name</label><input type="text" placeholder="Middle" required></div>
+                      <div><label>Last Name</label><input type="text" placeholder="Last" required></div>
+                    </div>
+                    <label>Student ID</label><input type="text" placeholder="02000123456" required>
+                    <label>STI Email</label><input type="email" placeholder="you@globalcity.sti.edu.ph" required>
+                    <label>Password</label>
+                    <div class="password-wrapper">
+                      <input type="password" placeholder="********" required>
+                      <button type="button" class="toggle-pw">👁</button>
+                    </div>
+                    <label>Confirm Password</label>
+                    <div class="password-wrapper">
+                      <input type="password" placeholder="********" required>
+                      <button type="button" class="toggle-pw">👁</button>
+                    </div>
+                    <div class="terms">
+                      <input type="checkbox" id="stu-agree" required>
+                      <label for="stu-agree">I agree to the <a href="#">Terms</a> &amp; <a href="#">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="btn-login">Create Account</button>
+                  </form>
+                </div>
+
+              </div>
+
+              <!-- ADMIN ROLE -->
+              <div class="role-view admin-view">
+
+                <!-- ADMIN LOGIN -->
+                <div id="admin-login" class="view">
+                  <h2 class="popup-title">ADMIN LOGIN</h2>
+                  <form class="popup-form" onsubmit="return validateAdminLogin()">
+                    <label for="adm-email">Admin Email</label>
+                    <input id="adm-email" type="email"
+                          placeholder="you@globalcity.sti.edu.ph"
+                          required>
+                    <label for="adm-pass">Password</label>
+                    <div class="password-wrapper">
+                      <input id="adm-pass" type="password"
+                            placeholder="********" required>
+                      <button type="button" class="toggle-pw">👁</button>
+                    </div>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                    <button type="submit" class="btn-login">LOGIN</button>
+                  </form>
+                </div>
+
+                <!-- ADMIN REGISTER -->
+                <div id="admin-register" class="view">
+                  <h2 class="popup-title">CREATE YOUR ACCOUNT</h2>
+                  <form class="popup-form">
+                    <div class="name-row">
+                      <div><label>First Name</label><input type="text" placeholder="First" required></div>
+                      <div><label>Middle Name</label><input type="text" placeholder="Middle" required></div>
+                      <div><label>Last Name</label><input type="text" placeholder="Last" required></div>
+                    </div>
+                    <label>Admin ID</label><input type="text" placeholder="02000123456" required>
+                    <label>Email</label><input type="email" placeholder="you@globalcity.sti.edu.ph" required>
+                    <label>Password</label>
+                    <div class="password-wrapper">
+                      <input type="password" placeholder="********" required>
+                      <button type="button" class="toggle-pw">👁</button>
+                    </div>
+                    <label>Confirm Password</label>
+                    <div class="password-wrapper">
+                      <input type="password" placeholder="********" required>
+                      <button type="button" class="toggle-pw">👁</button>
+                    </div>
+                    <div class="terms">
+                      <input type="checkbox" id="admin-agree" required>
+                      <label for="admin-agree">I agree to the <a href="#">Terms</a> &amp; <a href="#">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="btn-login">Create Account</button>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMAIL VERIFICATION MODAL -->
+        <div class="modal-overlay" id="emailModal">
+          <div class="modal-box">
+            <h3>Verify Your Email</h3>
+            <p>Enter your STI email to receive a 6-digit code:</p>
+            <input type="email" id="emailInput" placeholder="you@sti.edu.ph" required>
+            <button id="sendCodeBtn" class="modal-btn">Send Code</button>
+          </div>
+        </div>
+
+        <!-- CODE VERIFICATION MODAL -->
+        <!-- CODE VERIFICATION MODAL -->
+<div class="modal-overlay" id="codeModal">
+  <div class="modal-box">
+    <!-- close “X” -->
+    <button class="close-btn" onclick="hideModal('codeModal')">×</button>
+
+    <!-- header with envelope icon -->
+    <div class="verify-header">
+      <!-- simple inline svg envelope -->
+      <svg class="icon-mail" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5zm2 0l8 5 8-5H4zm16 2.236l-8 5-8-5V19h16V7.236z"/>
+      </svg>
+      <h3>Verify Your Email</h3>
+    </div>
+
+    <!-- subtext with dynamic address -->
+    <p class="verify-subtext">
+      We’ve sent a 6-digit verification code to  
+      <span class="verify-email">guevarra.282027@globalcity.sti.edu.ph</span>
+    </p>
+
+    <!-- code entry -->
+    <label for="codeInput" class="verify-label">Verification Code</label>
+    <input id="codeInput" class="verify-input" type="text" maxlength="6" placeholder="123456">
+
+    <!-- submit button -->
+    <button id="verifySubmit" class="verify-btn">Verify Email</button>
+
+    <!-- expiration info -->
+    <div class="verify-info">
+      <!-- simple inline svg clock -->
+      <svg class="icon-clock" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm1 11h4v-2h-4V6h-2v7h6v-2z"/>
+      </svg>
+      <span>Code expires in 15 minutes</span>
+    </div>
+
+    <!-- resend link -->
+    <p class="verify-footer">
+      Didn’t receive the code?
+      <a href="#" id="resendCode">Resend Code</a>
+    </p>
+  </div>
+</div>
+
+      <!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-box">
+    <button class="close-btn" onclick="hideModal('successModal')">×</button>
+    <!-- green checkmark -->
+    <svg viewBox="0 0 24 24" style="width:48px;height:48px;fill:#28A745;margin-bottom:1rem">
+      <path d="M9 16.17l-3.88-3.88-1.42 1.41L9 19 20.3 7.71l-1.41-1.41z"/>
+    </svg>
+    <h3 style="margin-bottom:.5rem;color:#27286C">Email Verified Successfully!</h3>
+    <p style="margin-bottom:1.5rem;color:#555">
+      Your Email has been verified and you may now proceed.
+    </p>
+    <button id="proceedBtn" class="modal-btn">Proceed</button>
+  </div>
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <p>STI GLOBAL CITY Website | &copy; 2025 STI GLOBAL CITY | STI SHS Club Management</p>
+    </footer>
+  </div>
+</body>
+</html>

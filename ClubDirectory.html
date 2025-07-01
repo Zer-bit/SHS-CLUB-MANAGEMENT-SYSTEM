@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ClubDirectory.css">
+    <script src="ClubDirectory.js" defer></script>
+</head>
+<body>
+      <!-- ── LEFT SIDEBAR ── -->
+  <div class="side-nav">
+    <!-- Hamburger menu -->
+    <button class="side-nav__btn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6"  x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- STI Logo -->
+    <img src="Images/stiLogo.png" alt="STI Logo" class="side-nav__logo">
+
+    <!-- Profile button -->
+    <button class="side-nav__btn" aria-label="Profile">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+      </svg>
+    </button>
+   
+    
+
+  </div>
+
+  <!-- ── PAGE CONTENT (pushed right) ── -->
+  <div class="content-wrapper">
+
+    <!-- ── TOP “PILL” NAVBAR ── -->
+    <nav class="pill-nav">
+      <ul class="pill-nav__links">
+        <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Home <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="HomeNews.html">Club News</a></li>
+          <li><a href="HomeEventClub.html">Club Events</a></li>
+        </ul>
+      </li>
+        <li class="pill-nav__item"><a href="ManageContent-NewsManagement.html">Manage Content</a></li>
+        <li class="pill-nav__item"><a href="ClubDirectory.html">Club Directory</a></li>
+        <li class="pill-nav__item"><a href="Request.html">Requests</a></li>
+        <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Account <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="">Profile</a></li>
+          <li><a href="">Settings</a></li>
+          <li><a href="index.html" class="logout-link">Logout</a></li>
+        </ul>
+      </li>
+      </ul>
+      <div class="pill-nav__icons">
+        <button class="pill-nav__icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="pill-nav__icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ── DIRECTORY HEADER ── -->
+    <section class="directory-hero">
+      <h1>Club Directory</h1>
+      <p>Manage and view all clubs, advisers and members.</p>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Active Clubs</div>
+          <div class="metric-value">11</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Student Members</div>
+          <div class="metric-value">500</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Club Advisers</div>
+          <div class="metric-value">12</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CLUB CARDS GRID ── -->
+    <div class="clubs-grid">
+      <!-- CARD #1 -->
+      <div class="club-card">
+        <div class="club-tag">Arts &amp; Culture</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">Artes Global Music</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Mr. Nigel Pablo</div>
+          <div><strong>Club Members</strong><br>5 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+       <!-- CARD #2 -->
+      <div class="club-card">
+        <div class="club-tag">Art &amp; Culture</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">Artes Global Dance &amp; Drama</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Mr. Henry Diaz</div>
+          <div><strong>Club Members</strong><br>49 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+       <!-- CARD #3 -->
+      <div class="club-card">
+        <div class="club-tag">Academic</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">ABM Club</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Ms. Jenny Dizon</div>
+          <div><strong>Club Members</strong><br>40 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+    
+      <!-- CARD #4 -->
+      <div class="club-card">
+        <div class="club-tag">Special Interest</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">Cooks Club</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Ms. Hapi Tuazon</div>
+          <div><strong>Club Members</strong><br>50 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+       <!-- CARD #5 -->
+      <div class="club-card">
+        <div class="club-tag">Arts &amp; Culture</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">Digital &amp; Multimedia Arts Club</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Ms. Britchie Enok</div>
+          <div><strong>Club Members</strong><br>50 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+        <!-- CARD #6 -->
+      <div class="club-card">
+        <div class="club-tag">Community Service</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">Student Engagement Service League</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Mr. Justine Tuire</div>
+          <div><strong>Club Members</strong><br>47 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+            <!-- CARD #7 -->
+      <div class="club-card">
+        <div class="club-tag">Academic</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">HUMMS Club</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Mr. Felix Rivera</div>
+          <div><strong>Club Members</strong><br>21 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+            <!-- CARD #8 -->
+      <div class="club-card">
+        <div class="club-tag">Academic</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">ITMAWE Club</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Ms. Jesse Sebastian</div>
+          <div><strong>Club Members</strong><br>21 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+            <!-- CARD #9 -->
+      <div class="club-card">
+        <div class="club-tag">Academic</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">STEM Club</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Ms. Cassie Romano</div>
+          <div><strong>Club Members</strong><br>21 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+            <!-- CARD #10 -->
+      <div class="club-card">
+        <div class="club-tag">Academic</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">Sport Club</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Mr. Sky Trinidad</div>
+          <div><strong>Club Members</strong><br>21 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+            <!-- CARD #11 -->
+      <div class="club-card">
+        <div class="club-tag">Academic</div>
+        <img src="" alt="club logo" class="club-logo" />
+        <h2 class="club-name">Youth Responders Club</h2>
+        <div class="club-info">
+          <div><strong>Club Adviser</strong><br>Mr. Nathan Vargas</div>
+          <div><strong>Club Members</strong><br>21 members</div>
+        </div>
+        <button class="club-btn">View Details</button>
+      </div>
+
+  </div>
+
+<!-- LOGOUT CONFIRM MODAL -->
+<div id="logoutConfirmOverlay">
+  <div class="modal-box">
+    <h4>Do you want to logout?</h4>
+    <div class="btns">
+      <button class="btn-no">No</button>
+      <button class="btn-yes">Yes</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
