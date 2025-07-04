@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Student-About.css">
+    <script src="Student-About.js" defer></script>
+</head>
+<body>
+     <!-- ── LEFT SIDEBAR ── -->
+  <div class="side-nav">
+    <!-- Hamburger menu -->
+    <button class="side-nav__btn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6"  x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- STI Logo -->
+    <img src="Images/stiLogo.png" alt="STI Logo" class="side-nav__logo">
+
+    <!-- Profile button -->
+    <button class="side-nav__btn" aria-label="Profile">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+      </svg>
+    </button>
+
+    
+
+  </div>
+
+  <!-- ── PAGE CONTENT (pushed right) ── -->
+  <div class="content-wrapper">
+
+    <!-- ── TOP “PILL” NAVBAR ── -->
+    <nav class="pill-nav">
+      <ul class="pill-nav__links">
+      <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Home <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="Student-HomeNews.html">Club News</a></li>
+          <li><a href="Student-HomeEventClub.html">Club Events</a></li>
+        </ul>
+      </li>
+        <li class="pill-nav__item"><a href="Student-ListOfClub.html">List of Clubs</a></li>
+        <li class="pill-nav__item"><a href="Student-DiscoverYourClub.html">Discover your Club</a></li>
+        <li class="pill-nav__item"><a href="">About</a></li>
+        <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Account <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="">Profile</a></li>
+          <li><a href="">Settings</a></li>
+          <li><a href="index.html" class="logout-link">Logout</a></li>
+        </ul>
+      </li>
+      </ul>
+      <div class="pill-nav__icons">
+        <button class="pill-nav__icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="pill-nav__icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+      <!-- ── HERO BANNER: “Discover Your Club” ── -->
+  <section class="about-hero">
+    <h1>Discover the perfect club for you!</h1>
+    <p class="about-hero__lead">
+      Join a vibrant community of students who share your interests. Find your place
+      to grow and excel from technology to the arts, leadership to sports.
+    </p>
+    <div class="about-hero__cta">
+      <a href="Student-ListOfClub.html" class="btn-yellow">Browse Clubs →</a>
+      <a href="Student-DiscoverYourClub.html" class="btn-white">Get Personalized Recommendations</a>
+    </div>
+  </section>
+
+  <!-- ── “Why Join a Club?” FEATURES ROW ── -->
+  <section class="why-join">
+    <h2 class="why-join__title">Why Join a Club?</h2>
+    <div class="why-join__grid">
+      <div class="feature-card">
+        <!-- you can swap these emojis for your SVG icons later -->
+        <div class="feature-card__icon">👥❤️</div>
+        <h3>Build Connections</h3>
+        <p>Meet like-minded students and form lasting friendships through shared interests and activities.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🏅</div>
+        <h3>Develop Skills</h3>
+        <p>Enhance your leadership, teamwork, and specific talents through hands-on club activities.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🎯</div>
+        <h3>Achieve Goals</h3>
+        <p>Work towards academic and personal goals with support from club advisers and peers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED CLUBS + STATS ── -->
+  <section class="featured-clubs">
+    <div class="featured-clubs__header">
+      <h2>Featured Clubs</h2>
+      <a href="Student-ListOfClub.html" class="view-all">View All Clubs →</a>
+    </div>
+    <div class="club-card-grid">
+      <div class="club-card">
+        <img src="https://via.placeholder.com/64/1e3a8a/ffffff?text=A" alt="Artist Global Music Logo">
+        <h3>Artist Global Music</h3>
+        <p>Perform and collaborate with fellow musicians while exploring different music genres.</p>
+        <div class="club-card__meta">5/50 members</div>
+        <a href="Student-About.html" class="club-card__btn">Learn More</a>
+      </div>
+      <div class="club-card">
+        <img src="https://via.placeholder.com/64/1e3a8a/ffffff?text=D" alt="Artist Global Dance & Drama Logo">
+        <h3>Artist Global Dance & Drama</h3>
+        <p>Express creativity through dance and acting while honing your performance skills.</p>
+        <div class="club-card__meta">21/50 members</div>
+        <a href="Student-About.html" class="club-card__btn">Learn More</a>
+      </div>
+      <div class="club-card">
+        <img src="https://via.placeholder.com/64/1e3a8a/ffffff?text=ABM" alt="ABM Club Logo">
+        <h3>ABM Club</h3>
+        <p>Develop business and marketing skills while learning real-world financial strategies.</p>
+        <div class="club-card__meta">49/50 members</div>
+        <a href="Student-About.html" class="club-card__btn">Learn More</a>
+      </div>
+    </div>
+
+    <!-- bottom stats row -->
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat__number">11</div>
+        <div class="stat__label">Active Clubs</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">500</div>
+        <div class="stat__label">Student Members</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">12</div>
+        <div class="stat__label">Club Advisers</div>
+      </div>
+    </div>
+  </section>
+
+
+  </div>
+<!-- LOGOUT CONFIRM MODAL -->
+<div id="logoutConfirmOverlay">
+  <div class="modal-box">
+    <h4>Do you want to logout?</h4>
+    <div class="btns">
+      <button class="btn-no">No</button>
+      <button class="btn-yes">Yes</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

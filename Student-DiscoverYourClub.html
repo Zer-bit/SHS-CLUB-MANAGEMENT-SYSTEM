@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Student-DiscoverYourClub.css">
+    <script src="Student-DiscoverYourClub.js" defer></script>
+</head>
+<body>
+      <!-- ── LEFT SIDEBAR ── -->
+  <div class="side-nav">
+    <!-- Hamburger menu -->
+    <button class="side-nav__btn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6"  x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- STI Logo -->
+    <img src="Images/stiLogo.png" alt="STI Logo" class="side-nav__logo">
+
+    <!-- Profile button -->
+    <button class="side-nav__btn" aria-label="Profile">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+      </svg>
+    </button>
+
+    
+
+  </div>
+
+  <!-- ── PAGE CONTENT (pushed right) ── -->
+  <div class="content-wrapper">
+
+    <!-- ── TOP “PILL” NAVBAR ── -->
+    <nav class="pill-nav">
+      <ul class="pill-nav__links">
+      <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Home <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="Student-HomeNews.html">Club News</a></li>
+          <li><a href="Student-HomeEventClub.html">Club Events</a></li>
+        </ul>
+      </li>
+        <li class="pill-nav__item"><a href="Student-ListOfClub.html">List of Clubs</a></li>
+        <li class="pill-nav__item"><a href="">Discover your Club</a></li>
+        <li class="pill-nav__item"><a href="Student-About.html">About</a></li>
+        <li class="pill-nav__item dropdown">
+        <a href="#" class="dropdown-toggle">
+          Account <span class="pill-nav__arrow">▾</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="">Profile</a></li>
+          <li><a href="">Settings</a></li>
+          <li><a href="index.html" class="logout-link">Logout</a></li>
+        </ul>
+      </li>
+      </ul>
+      <div class="pill-nav__icons">
+        <button class="pill-nav__icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="pill-nav__icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+     <!-- ── DISCOVER YOUR CLUB HERO ── -->
+  <section class="discover-hero">
+    <h1>Find Your Club</h1>
+    <p class="lead">
+      Discover the perfect club based on your interests and preferences.<br>
+      Answer a few questions and get personalized recommendations tailored to your passions and skills.
+    </p>
+  </section>
+
+  <!-- ── DISCOVER YOUR CLUB: QUESTIONNAIRE ── -->
+  <section id="questionnaire" class="quiz-wrapper panel active">
+    <!-- Tabs -->
+    <div class="quiz-tabs">
+      <div class="tab active" data-target="questionnaire">Questionnaire</div>
+      <div class="tab" data-target="results">Result</div>
+    </div>
+
+    <!-- Form -->
+    <form class="quiz-form">
+      <!-- free-text -->
+      <div class="form-group">
+        <label for="club-details">Tell us about your interests</label>
+        <textarea
+          id="club-details"
+          placeholder="I'm interested in..."></textarea>
+      </div>
+
+      <!-- interests -->
+      <fieldset>
+        <legend>What are your main interests? <span class="note">(Select up to 3)</span></legend>
+        <label><input type="checkbox" name="interests" value="Music"> Music</label>
+        <label><input type="checkbox" name="interests" value="Dance"> Dance &amp; Drama</label>
+        <label><input type="checkbox" name="interests" value="Biz"> Business &amp; Marketing</label>
+        <label><input type="checkbox" name="interests" value="Cooking"> Cooking &amp; Culinary</label>
+        <label><input type="checkbox" name="interests" value="Digital"> Digital &amp; Multimedia Arts</label>
+        <label><input type="checkbox" name="interests" value="Service"> Community Service</label>
+        <label><input type="checkbox" name="interests" value="STEM"> Science &amp; Technology</label>
+        <label><input type="checkbox" name="interests" value="Sports"> Sports &amp; Fitness</label>
+        <label><input type="checkbox" name="interests" value="Emergency"> Emergency Response</label>
+      </fieldset>
+
+      <!-- skills -->
+      <fieldset>
+        <legend>What skills do you want to develop? <span class="note">(Select up to 3)</span></legend>
+        <label><input type="checkbox" name="skills" value="Leadership"> Leadership &amp; Teamwork</label>
+        <label><input type="checkbox" name="skills" value="Creativity"> Creativity &amp; Innovation</label>
+        <label><input type="checkbox" name="skills" value="Communication"> Communication &amp; Public Speaking</label>
+        <label><input type="checkbox" name="skills" value="Technical"> Technical &amp; IT Skills</label>
+        <label><input type="checkbox" name="skills" value="Problem"> Problem-Solving &amp; Critical Thinking</label>
+        <label><input type="checkbox" name="skills" value="Discipline"> Sportsmanship &amp; Discipline</label>
+      </fieldset>
+
+      <!-- activities -->
+      <fieldset>
+        <legend>What type of club activities interest you the most? <span class="note">(Select up to 3)</span></legend>
+        <label><input type="checkbox" name="activities" value="Performing"> Performing Arts (Music, Dance, Theater)</label>
+        <label><input type="checkbox" name="activities" value="Athletics"> Sports &amp; Athletics</label>
+        <label><input type="checkbox" name="activities" value="Volunteering"> Community Engagement &amp; Volunteering</label>
+        <label><input type="checkbox" name="activities" value="DigitalMedia"> Digital Media &amp; Technology</label>
+        <label><input type="checkbox" name="activities" value="Entrepreneurship"> Business &amp; Entrepreneurship</label>
+        <label><input type="checkbox" name="activities" value="Science"> Science &amp; Innovation</label>
+        <label><input type="checkbox" name="activities" value="Culinary"> Food &amp; Culinary</label>
+      </fieldset>
+
+      <!-- submit -->
+      <button type="submit" class="recommend-btn">
+        Get Personalized Recommendation
+      </button>
+    </form>
+  </section>
+
+     <!-- ── DISCOVER YOUR CLUB: RESULTS ── -->
+<section id="results" class="quiz-wrapper panel">
+
+  <!-- Tabs -->
+    <div class="quiz-tabs">
+      <div class="tab" data-target="questionnaire">Questionnaire</div>
+      <div class="tab active" data-target="results">Result</div>
+    </div>
+
+  <!-- blue info banner -->
+  <div class="results-banner">
+    <h2>Your Personalized Club Recommendations</h2>
+    <p>Based on your interests and preferences, we found these clubs that might be perfect for you. The match percentage indicates how well each club aligns with your interests.</p>
+  </div>
+
+  <!-- top recommendation -->
+  <div class="recommendation-card top">
+    <h3>Top Recommendation</h3>
+    <div class="card-content">
+      <img src="https://via.placeholder.com/60/1e3a8a/FFFFFF?text=🎵" alt="Artist Global Music logo">
+      <div class="info">
+        <span class="badge">Arts &amp; Culture</span>
+        <h4>Artist Global Music</h4>
+        <p>Perform and collaborate with fellow musicians while exploring different music genres.</p>
+      </div>
+      <div class="percent-circle">
+        <svg viewBox="0 0 36 36"><path class="bg" d="M18 2a16 16 0 1 1-0.001 0z"/><path class="fg" d="M18 2a16 16 0 1 1 0 32a16 16 0 1 1 0-32" stroke-dasharray="95,100"/></svg>
+        <span class="percent">95%</span>
+      </div>
+    </div>
+    <div class="matched">
+      <strong>Matched keywords:</strong>
+      <span>Creativity</span><span>Performing Arts</span><span>Music &amp; Collaboration</span>
+    </div>
+    <button class="action-btn">View Club Details</button>
+  </div>
+
+  <!-- second recommendation -->
+  <div class="recommendation-card">
+    <div class="card-content">
+      <img src="https://via.placeholder.com/60/1e3a8a/FFFFFF?text=💃" alt="Artist Global Dance & Drama logo">
+      <div class="info">
+        <span class="badge">Arts &amp; Culture</span>
+        <h4>Artist Global Dance &amp; Drama</h4>
+        <p>Express creativity through dance and acting while developing performance skills.</p>
+      </div>
+      <div class="percent-circle">
+        <svg viewBox="0 0 36 36"><path class="bg" d="M18 2a16 16 0 1 1-0.001 0z"/><path class="fg" d="M18 2a16 16 0 1 1 0 32a16 16 0 1 1 0-32" stroke-dasharray="85,100"/></svg>
+        <span class="percent">85%</span>
+      </div>
+    </div>
+    <div class="matched">
+      <strong>Matched keywords:</strong>
+      <span>Creativity</span><span>Performing Arts</span><span>Public Speaking</span>
+    </div>
+    <button class="action-btn">View Club Details</button>
+  </div>
+
+  <!-- browse all -->
+  <div class="browse-all">
+    <button id="browseAll">Browse All Clubs</button>
+  </div>
+</section>
+
+
+  </div>
+<!-- LOGOUT CONFIRM MODAL -->
+<div id="logoutConfirmOverlay">
+  <div class="modal-box">
+    <h4>Do you want to logout?</h4>
+    <div class="btns">
+      <button class="btn-no">No</button>
+      <button class="btn-yes">Yes</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
