@@ -1,0 +1,9 @@
+<svg width="50" height="50" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <path d="M32 4 L4 24 H12 V60 H28 V40 H36 V60 H52 V24 H60 Z" fill="#FF0" stroke="#000" stroke-width="2"></path>
+  <path d="M32 32
+           c4 -4, 12 -4, 12 4
+           c0 8 -12 12 -12 20
+           c-0 -8 -12 -12 -12 -20
+           c0 -8 8 -8 12 -4
+           Z" fill="#000"></path>
+</svg>

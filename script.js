@@ -1,6 +1,11 @@
 // script.js
 
 // ****************************************************************************
+// GLOBAL STATE
+// ****************************************************************************
+let pendingRole = 'student';  // will track whether we started from "student" or "admin"
+
+// ****************************************************************************
 // HELPERS
 // ****************************************************************************
 
@@ -11,9 +16,9 @@ function showLoginForm() {
 
 // Hide a modal overlay by its ID
 function hideModal(id) {
-  document.getElementById(id).style.display = 'none';
+  const overlay = document.getElementById(id);
+  if (overlay) overlay.style.display = 'none';
 }
-
 
 // ****************************************************************************
 // MAIN INITIALIZATION
@@ -74,7 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------------------------------
   // EMAIL AUTH FLOW (with HTML5 validation)
   // ----------------------------------------------------------------------------
-  // 1) Intercept “Create Account” clicks to launch emailModal, but only if form.valid
+
+  // 1) Intercept “Create Account” clicks to launch emailModal
   document.querySelectorAll('#student-register .btn-login, #admin-register .btn-login')
     .forEach(btn => {
       btn.addEventListener('click', e => {
@@ -84,6 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
         e.preventDefault();
+
+        // remember which role they were on:
+        pendingRole = document.querySelector('.popup-tabs .tab.active').dataset.role;
+
         hideModal('loginPopup');
         document.getElementById('emailModal').style.display = 'flex';
       });
@@ -103,21 +113,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('successModal').style.display = 'flex';
   });
 
-  // 4) Proceed → hide successModal, reopen loginPopup at student-login
+  // 4) Proceed → hide successModal, reopen loginPopup at correct role-login
   document.getElementById('proceedBtn').addEventListener('click', e => {
     e.preventDefault();
     hideModal('successModal');
     showLoginForm();
 
-    // Reset to Student / Login
+    // Reset to the correct role tab
     document.querySelectorAll('.popup-tabs .tab').forEach(t => t.classList.remove('active'));
-    document.querySelector('.popup-tabs .tab[data-role="student"]').classList.add('active');
+    document.querySelector(`.popup-tabs .tab[data-role="${pendingRole}"]`).classList.add('active');
 
+    // Reset to login subtab
     document.querySelectorAll('.popup-subtabs .subtab').forEach(s => s.classList.remove('active'));
     document.querySelector('.popup-subtabs .subtab[data-view="login"]').classList.add('active');
 
+    // Show the correct login view
     document.querySelectorAll('.views .view')
-      .forEach(v => v.classList.toggle('active', v.id === 'student-login'));
+      .forEach(v => v.classList.toggle('active', v.id === `${pendingRole}-login`));
   });
 
   // 5) Wire up any “×” buttons inside codeModal / successModal
@@ -130,35 +142,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// ****************************************************************************
+// INLINE VALIDATION
+// ****************************************************************************
 function validateAdminLogin() {
   const username = document.getElementById("adm-email").value.trim();
   const password = document.getElementById("adm-pass").value;
 
-  // your default admin credentials:
   if (username === "admin@globalcity.sti.edu.ph" && password === "admin123") {
     alert("Login Successful");
-    // relative redirect to your page
     window.location.href = "HomeNews.html";
-    return false;  // stop any form submission
+    return false;
   }
 
   alert("Email or password is incorrect.");
-  return false;    // keep them on the same form
-};
-
+  return false;
+}
 
 function validateStudentLogin() {
   const username = document.getElementById("stu-email").value.trim();
   const password = document.getElementById("stu-pass").value;
 
-  // your default admin credentials:
   if (username === "student@globalcity.sti.edu.ph" && password === "student123") {
     alert("Login Successful");
-    // relative redirect to your page
     window.location.href = "Student-HomeNews.html";
-    return false;  // stop any form submission
+    return false;
   }
 
   alert("Email or password is incorrect.");
-  return false;    // keep them on the same form
-};
+  return false;
+}
